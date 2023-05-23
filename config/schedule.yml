@@ -1,0 +1,5 @@
+#"runs every every 15th minute.”
+email_price_alert:
+  cron: "*/15 * * * *"
+  class: "AlertEmailWorker"
+  queue: critical

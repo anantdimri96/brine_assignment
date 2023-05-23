@@ -1,0 +1,12 @@
+:concurrency: 5
+development:
+  :concurrency: 3
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 10
+:queues:
+  - critical
+  - default
+  - low
+  - temp

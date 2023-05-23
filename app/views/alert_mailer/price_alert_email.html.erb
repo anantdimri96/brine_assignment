@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<h1>Price Alert - Target Price Reached</h1>
+<p>
+  Hello <%= @user.name %>,
+  <br>
+  The price alert you set for <%= @alert.cryptocurrency.name %> has been triggered.
+</p>
+<p>
+  Current Price: $<%= @alert.current_price %>
+  <br>
+  Target Price: $<%= @alert.target_price %>
+</p>
+</body>
+</html>

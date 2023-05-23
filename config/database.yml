@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
+  port: 5432
+
+development:
+  <<: *default
+  database: brine_development
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: brine_test
+  host: localhost
+  port: 5432
+
+#
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
+# production:
+#   <<: *default
+#   database: dbname
+#   username: uswername
+#   password: <%= ENV['PROD_DATABASE_PASSWORD'] %>
