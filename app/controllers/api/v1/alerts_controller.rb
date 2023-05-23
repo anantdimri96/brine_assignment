@@ -41,23 +41,21 @@ class Api::V1::AlertsController < ApplicationController
   def index
     page = params[:page].to_i || 10
     per_page = params[:per_page].to_i || 10
-    user_id = params[:user_id]
+    user_id = params.require(:user_id)
 
     # cache_key = "alerts_#{user_id}"
     # alerts = RedisWrapper.get(cache_key)
-
     # if alerts.nil?
-    # If cache is empty, fetch alerts from the database
-    alerts = Alert.where(user_id:)
-                  .filter_by_status(params[:status])
-                  .paginate(page:, per_page:)
-    # Store alerts in cache with expiration of 5 minutes
-    # byebug
     # RedisWrapper.set(cache_key, alerts, 1.minutes.to_i)
     # end
+    # 
+
+    alerts = Alert.where(user_id: user_id)
+                  .filter_by_status(params[:status])
+                  .paginate(page: page, per_page: per_page)
 
     render json: {
-      alert: AlertSerializer.new(alerts, { meta: { pagination: { page:, per_page: } } }).serializable_hash
+      alert: AlertSerializer.new(alerts, { meta: { pagination: { page: page, per_page: per_page, total: alerts.count} } }).serializable_hash
     }, status: :ok
   end
 
