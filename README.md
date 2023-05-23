@@ -271,5 +271,5 @@ OR
 
 # Postman Collection with examples
 
-I am adding the postman collection with examples of the above api endpoints in the repo itself.
+I am adding the [postman collection](https://github.com/anantdimri96/brine-assignment/blob/main/brine.postman_collection.json) with examples of the above api endpoints in the repo itself.
 ___
