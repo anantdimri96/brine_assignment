@@ -1,0 +1,687 @@
+{
+	"info": {
+		"_postman_id": "da6f56bd-697a-483b-9c10-4394305c26c5",
+		"name": "brine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create alert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": 1,\n  \"cryptocurrency_id\": 1,\n  \"target_price\": 33000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/alerts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"alerts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "existing alert with same target price",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 1,\n  \"cryptocurrency_id\": 1,\n  \"target_price\": 33000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/alerts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"alerts"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "e3aab7f4-c75c-40a3-891c-91dc05a22534"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.145828"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"User already has an active alert for this cryptocurrency\"\n}"
+				},
+				{
+					"name": "successful creation of alert",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 1,\n  \"cryptocurrency_id\": 1,\n  \"target_price\": 40000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/alerts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"alerts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, must-revalidate, private, max-age=0"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "5aaf0b3e-c466-4511-a96e-cdfd7ca71f5c"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "10.273661"
+						},
+						{
+							"key": "X-MiniProfiler-Original-Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "X-MiniProfiler-Ids",
+							"value": "nz40lexmy1hbjpe6torn,a1ml2tly7g63mcvnzfth,qt10i9wx3attu9pmgkd,4t8fce6cb1kw3rw54hdm,ahss3dygdx4jmm8hkxd2,vs4aiy5rpp035bqpjjdt,c654k39wb6na9e4o8rn3,jx4ebyw64pwxl8e2xdix,z4nyxvgpw50gjjqd07zq,crg7adatdyz09g9mevmw,wj06bq95sqt3y216blp9,z3glfojabw2uzouubn2,ryow72mzedil7jyinqgl,d1lp0zloze12whweo4zb,3we21py19p77zezze22t"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"user_id\": 1,\n    \"cryptocurrency_id\": 1,\n    \"target_price\": \"40000.0\",\n    \"status\": \"active\",\n    \"created_at\": \"2023-05-23T07:21:21.778Z\",\n    \"updated_at\": \"2023-05-23T07:21:21.778Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List alerts for user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/alerts?user_id=1&page=1&per_page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"alerts"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "all alerts of a user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/alerts?user_id=1&page=1&per_page=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"alerts"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, must-revalidate, private, max-age=0"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "3f78f352-afe7-4473-aac3-5d860926b26f"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "1.444736"
+						},
+						{
+							"key": "X-MiniProfiler-Original-Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "X-MiniProfiler-Ids",
+							"value": "uj3l80fauc3qn5o1nmvq,9waru1pp538gshin8zgl,h4we1zphinjzczefxg43,ihtw6d8079bc5u92rrh2,v9dv6of5wh18jv55khwn,vdovilbtqbhatbva6av4,8jjey2vgmbky43enmh54,mvmpgvf2npnu7wdo9s39,3qu2uy7acxzb5kjyz9to,5wcwirewxtnlhxpikr0,fpjmegqpmfv7a74nbdxx,dprnhgenyz39r11oa5h2,a1ml2tly7g63mcvnzfth,qt10i9wx3attu9pmgkd,4t8fce6cb1kw3rw54hdm,ahss3dygdx4jmm8hkxd2,vs4aiy5rpp035bqpjjdt,c654k39wb6na9e4o8rn3,jx4ebyw64pwxl8e2xdix,z4nyxvgpw50gjjqd07zq"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Content-Length",
+							"value": "495"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"alert\": {\n        \"data\": [\n            {\n                \"id\": \"4\",\n                \"type\": \"alert\",\n                \"attributes\": {\n                    \"id\": 4,\n                    \"user_id\": 1,\n                    \"target_price\": \"30000.0\",\n                    \"status\": \"deleted\"\n                }\n            },\n            {\n                \"id\": \"5\",\n                \"type\": \"alert\",\n                \"attributes\": {\n                    \"id\": 5,\n                    \"user_id\": 1,\n                    \"target_price\": \"34000.0\",\n                    \"status\": \"deleted\"\n                }\n            },\n            {\n                \"id\": \"11\",\n                \"type\": \"alert\",\n                \"attributes\": {\n                    \"id\": 11,\n                    \"user_id\": 1,\n                    \"target_price\": \"40000.0\",\n                    \"status\": \"active\"\n                }\n            },\n            {\n                \"id\": \"12\",\n                \"type\": \"alert\",\n                \"attributes\": {\n                    \"id\": 12,\n                    \"user_id\": 1,\n                    \"target_price\": \"41000.0\",\n                    \"status\": \"active\"\n                }\n            }\n        ],\n        \"meta\": {\n            \"pagination\": {\n                \"page\": 1,\n                \"per_page\": 10,\n                \"total\": 4\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "filter by status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/alerts?user_id=1&page=1&per_page=10&status=deleted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"alerts"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "deleted"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, must-revalidate, private, max-age=0"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "d7106677-aefa-4447-8c42-2a23ade3d74a"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "1.046855"
+						},
+						{
+							"key": "X-MiniProfiler-Original-Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "X-MiniProfiler-Ids",
+							"value": "4e97snxy9uell4t9dop2,uj3l80fauc3qn5o1nmvq,9waru1pp538gshin8zgl,h4we1zphinjzczefxg43,ihtw6d8079bc5u92rrh2,v9dv6of5wh18jv55khwn,vdovilbtqbhatbva6av4,8jjey2vgmbky43enmh54,mvmpgvf2npnu7wdo9s39,3qu2uy7acxzb5kjyz9to,5wcwirewxtnlhxpikr0,fpjmegqpmfv7a74nbdxx,dprnhgenyz39r11oa5h2,a1ml2tly7g63mcvnzfth,qt10i9wx3attu9pmgkd,4t8fce6cb1kw3rw54hdm,ahss3dygdx4jmm8hkxd2,vs4aiy5rpp035bqpjjdt,c654k39wb6na9e4o8rn3,jx4ebyw64pwxl8e2xdix"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Content-Length",
+							"value": "285"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"alert\": {\n        \"data\": [\n            {\n                \"id\": \"4\",\n                \"type\": \"alert\",\n                \"attributes\": {\n                    \"id\": 4,\n                    \"user_id\": 1,\n                    \"target_price\": \"30000.0\",\n                    \"status\": \"deleted\"\n                }\n            },\n            {\n                \"id\": \"5\",\n                \"type\": \"alert\",\n                \"attributes\": {\n                    \"id\": 5,\n                    \"user_id\": 1,\n                    \"target_price\": \"34000.0\",\n                    \"status\": \"deleted\"\n                }\n            }\n        ],\n        \"meta\": {\n            \"pagination\": {\n                \"page\": 1,\n                \"per_page\": 10,\n                \"total\": 2\n            }\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete alert",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/alerts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"alerts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "alert not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/alerts/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"alerts",
+								"4"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "5a7865cb-5bb2-4745-8274-cd58f33871e6"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.215703"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Alert not found\"\n}"
+				},
+				{
+					"name": "alert soft deleted successfully",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/alerts/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"alerts",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, must-revalidate, private, max-age=0"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "9c5549f1-e6be-447b-98ad-318938fe2f49"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.130789"
+						},
+						{
+							"key": "X-MiniProfiler-Original-Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "X-MiniProfiler-Ids",
+							"value": "fpjmegqpmfv7a74nbdxx,dprnhgenyz39r11oa5h2,a1ml2tly7g63mcvnzfth,qt10i9wx3attu9pmgkd,4t8fce6cb1kw3rw54hdm,ahss3dygdx4jmm8hkxd2,vs4aiy5rpp035bqpjjdt,c654k39wb6na9e4o8rn3,jx4ebyw64pwxl8e2xdix,z4nyxvgpw50gjjqd07zq,crg7adatdyz09g9mevmw,wj06bq95sqt3y216blp9,z3glfojabw2uzouubn2,ryow72mzedil7jyinqgl,d1lp0zloze12whweo4zb,3we21py19p77zezze22t,nz40lexmy1hbjpe6torn,z4dd5hs08a99n06kz3zo,x8ror79ii9n3pnpo6t9q,5qutl5wfimitjwe5k8ck"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "__profilin=p%3Dt; path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Alert deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
