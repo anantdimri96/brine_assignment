@@ -266,10 +266,10 @@ OR
   - SMTP is used to send the email notifications.
   - **NOTE:** [You might have to add your own SMTP creds for sending the email. The functionality is built and exists]()
   - **NOTE:** [I have added a console log as well incase the SMTP fails at your end during testing]() `app/mailers/alert_mailer.rb`
-<img width="994" alt="Screenshot 2023-05-23 at 4 27 01 PM" src="https://github.com/anantdimri96/brine-assignment/assets/27183971/f3f12596-a4c3-4467-9d90-dd60605e8d2b">
+<img width="1114" alt="Screenshot 2023-05-23 at 5 04 26 PM" src="https://github.com/anantdimri96/brine_assignment/assets/27183971/7f8640aa-84a4-4275-9b66-cd644c6d76dc">
 
 
 # Postman Collection with examples
 
-I am adding the [postman collection](https://github.com/anantdimri96/brine-assignment/blob/main/brine.postman_collection.json) with examples of the above api endpoints in the repo itself.
+I am adding the [postman collection](https://github.com/anantdimri96/brine_assignment/blob/main/brine.postman_collection.json) with examples of the above api endpoints in the repo itself.
 ___
